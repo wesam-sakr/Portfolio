@@ -1,19 +1,29 @@
 (function ($) {
   "use strict";
-  function portfolio_init() {
-    var portfolio_grid = $(".portfolio-grid"),
-      portfolio_filter = $(".portfolio-filters");
-    if (portfolio_grid) {
-      portfolio_grid.shuffle({ speed: 450, itemSelector: "figure" });
-      portfolio_filter.on("click", ".filter", function (e) {
-        portfolio_grid.shuffle("update");
-        e.preventDefault();
-        $(".portfolio-filters .filter").parent().removeClass("active");
-        $(this).parent().addClass("active");
-        portfolio_grid.shuffle("shuffle", $(this).attr("data-group"));
-      });
-    }
-  }
+  // filter items by category
+  $(document).ready(function() {
+    $('.portfolio-filters li a').click(function() {
+      // fetch the class of the clicked item
+      var ourClass = $(this).attr('class');
+  
+      // reset the active class on all the buttons
+      $('.portfolio-filters li').removeClass('active');
+      // update the active state on our clicked button
+      $(this).parent().addClass('active');
+  
+      if(ourClass == 'all') {
+        // show all our items
+        $('.portfolio-grid').children('figure.item').show();
+      }
+      else {
+        // hide all elements that don't share ourClass
+        $('.portfolio-grid').children('figure:not(.' + ourClass + ')').hide();
+        // show all elements that do share ourClass
+        $('.portfolio-grid').children('figure.' + ourClass).show();
+      }
+      return false;
+    });
+  });
   function mobileMenuHide() {
     var windowWidth = $(window).width(),
       siteHeader = $("#site_header");
