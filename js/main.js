@@ -37,18 +37,18 @@
       siteHeader.removeClass("animate");
     }
   }
-  function customScroll() {
-    var windowWidth = $(window).width();
-    if (windowWidth > 1024) {
-      $(".animated-section, .single-page-content").each(function () {
-        $(this).perfectScrollbar();
-      });
-    } else {
-      $(".animated-section, .single-page-content").each(function () {
-        $(this).perfectScrollbar("destroy");
-      });
-    }
-  }
+  // function customScroll() {
+  //   var windowWidth = $(window).width();
+  //   if (windowWidth > 1024) {
+  //     $(".animated-section, .single-page-content").each(function () {
+  //       $(this).perfectScrollbar();
+  //     });
+  //   } else {
+  //     $(".animated-section, .single-page-content").each(function () {
+  //       $(this).perfectScrollbar("destroy");
+  //     });
+  //   }
+  // }
   $(function () {
     $("#contact_form").validator();
     $("#contact_form").on("submit", function (e) {
@@ -90,7 +90,7 @@
       $(".animated-section").each(function () {
         $(this).perfectScrollbar("update");
       });
-      customScroll();
+      // customScroll();
     });
   $(document).on("ready", function () {
     var movementStrength = 23;
@@ -122,15 +122,15 @@
     $(".sidebar-toggle").on("click", function () {
       $("#blog-sidebar").toggleClass("open");
     });
-    var $portfolio_container = $(".portfolio-grid");
-    $portfolio_container.imagesLoaded(function () {
-      portfolio_init(this);
-    });
-    var $container = $(".blog-masonry");
-    $container.imagesLoaded(function () {
-      $container.masonry();
-    });
-    customScroll();
+    // var $portfolio_container = $(".portfolio-grid");
+    // $portfolio_container.imagesLoaded(function () {
+    //   portfolio_init(this);
+    // });
+    // var $container = $(".blog-masonry");
+    // $container.imagesLoaded(function () {
+    //   $container.masonry();
+    // });
+    // customScroll();
     $(".text-rotation").owlCarousel({
       loop: true,
       dots: false,
@@ -143,24 +143,24 @@
       animateOut: "animated-section-scaleDown",
       animateIn: "animated-section-scaleUp",
     });
-    $(".testimonials.owl-carousel").imagesLoaded(function () {
-      $(".testimonials.owl-carousel").owlCarousel({
-        nav: true,
-        items: 3,
-        loop: false,
-        navText: false,
-        autoHeight: true,
-        margin: 25,
-        responsive: {
-          0: { items: 1 },
-          480: { items: 1 },
-          768: { items: 2 },
-          1200: { items: 2 },
-        },
-      });
-    });
+    // $(".testimonials.owl-carousel").imagesLoaded(function () {
+    //   $(".testimonials.owl-carousel").owlCarousel({
+    //     nav: true,
+    //     items: 3,
+    //     loop: false,
+    //     navText: false,
+    //     autoHeight: true,
+    //     margin: 25,
+    //     responsive: {
+    //       0: { items: 1 },
+    //       480: { items: 1 },
+    //       768: { items: 2 },
+    //       1200: { items: 2 },
+    //     },
+    //   });
+    // });
     $(".clients.owl-carousel")
-      .imagesLoaded()
+      // .imagesLoaded()
       .owlCarousel({
         nav: true,
         items: 2,
