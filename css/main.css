@@ -1335,6 +1335,11 @@ input[type="text"],
 .portfolio-grid.five-columns figure {
   width: 20%;
 }
+.portfolio-item-img{
+  background: linear-gradient(to right, #355c7d, #6c5b7b, #c06c84);
+  border-radius: 10px;
+  /* padding: 10px; */
+}
 .portfolio-grid img {
   position: relative;
   display: block;
